@@ -1,13 +1,20 @@
 
-import { View, Text, StyleSheet,FlatList } from 'react-native';
+import { View, Text, StyleSheet,FlatList, Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState, useEffect } from 'react';
 import { getCarrinho } from '../utils/storage';
 import { useIsFocused } from '@react-navigation/native';
 import Lista from '../components/lista';
+import { clear } from '../utils/storage';
 
 
 export default function Carrinho() {
+
+    function Comprar() {
+        clear()
+        alert('Comprou')
+    }
+
     const IsFocused = useIsFocused()
 
     const[produtos, setProdutos] = useState([])
@@ -48,7 +55,7 @@ export default function Carrinho() {
         keyExtractor={(item) => String(item.id)}
         renderItem={({item}) => <Lista data={item}/> }
         />
-
+        <Button onPress={() => Comprar()} title='Comprar'></Button>
       </SafeAreaView>
     );
 }
