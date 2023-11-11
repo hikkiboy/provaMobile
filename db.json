@@ -1,0 +1,59 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "title": "Cerveja generica",
+      "author": "Carlos vendedor",
+      "foto": "https://www.extrabom.com.br/uploads/produtos/original/5117_extrabom_cervejas-super-premium_cerveja-heineken-600ml.jpg",
+      "preco": "R$999",
+      "quantidade": 2,
+      "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
+    },
+    {
+      "id": 2,
+      "title": "Coca-cola",
+      "author": "Pepsi",
+      "foto": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/002693-omie___coca-cola-1500ml__conv-1000x1000.jpg",
+      "preco": "R$999",
+      "quantidade": 999,
+      "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
+    },
+    {
+      "id": 3,
+      "title": "nao eh brahma",
+      "author": "brahma",
+      "foto": "https://cdn.formulaexpress.com.br/img/p/7/2/6/726-thickbox_default.jpg",
+      "preco": "R$999",
+      "quantidade": 999,
+      "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
+    },
+    {
+      "id": 4,
+      "title": "Pepsi",
+      "author": "Coca-cola",
+      "foto": "https://coopsp.vtexassets.com/arquivos/ids/215374-800-auto?v=637919527282000000&width=800&height=auto&aspect=true",
+      "preco": "R$999",
+      "quantidade": 999,
+      "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
+    },
+    {
+      "id": 5,
+      "title": "Blue-Bull",
+      "author": "Red blu",
+      "foto": "https://img.drogasil.com.br/media/catalog/product/e/n/energetico-red-bull-energy-drink-com-355ml.jpg",
+      "preco": "R$999",
+      "quantidade": 999,
+      "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
+    },
+    {
+      "id": 6,
+      "title": "Monster",
+      "author": "Monster",
+      "foto": "https://images.tcdn.com.br/img/img_prod/858764/energetico_monster_tradicional_lata_269ml_c_06_1205_1_2ec24548363cb51ab356972ffa48d125.jpg",
+      "preco": "R$999",
+      "quantidade": 999,
+      "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
+    }
+
+  ]
+}

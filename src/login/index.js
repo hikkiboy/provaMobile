@@ -10,7 +10,7 @@ import {
     KeyboardAvoidingView,
     ImageBackground
   } from "react-native";
-  import React, { useState } from "react";
+  import React, { useEffect, useState } from "react";
   import { app_auth } from "../../firebaseconfig";
   import {
     createUserWithEmailAndPassword,
@@ -20,16 +20,21 @@ import {
   import { SafeAreaView } from "react-native-safe-area-context";
 
   import { useNavigation } from "@react-navigation/native";
+import { clear } from "../utils/storage";
 //   import PasswordResets from "../../utils/forgotPassword";
   
   const LoginPage = () => {
     const navigation = useNavigation();
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-  
+    const [email, setEmail] = useState("teste@teste.com");
+    const [senha, setSenha] = useState("senhasenha");
+    
     const [loading, setLoading] = useState(false);
     const auth = app_auth;
-  
+    
+    useEffect(() => {
+      clear()
+    }, [])
+
     const SignIn = async () => {
       setLoading(true);
       try {

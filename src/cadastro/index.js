@@ -13,6 +13,7 @@ const Cadastro = () => {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [nome, setNome] = useState('')
+    const [cpf,setCpf] = useState('')
     const [loading, setLoading] = useState(false)
     const auth = app_auth;
 
@@ -21,6 +22,12 @@ const Cadastro = () => {
       setLoading(true)
       try{
         const response = await signInWithEmailAndPassword(auth, email, senha)
+        const Other = setNome(nome)
+        const docRef = await setDoc(doc(app_DB, "Usuarios", response.user.uid), {
+          Cpf: cpf,
+          Email: email,
+          Nome : nome
+        })
         
 
       } catch (error) {
@@ -55,6 +62,7 @@ const Cadastro = () => {
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style = {styles.container}>
 
         <TextInput value= {nome} style={styles.input} placeholder='Nome' autoCapitalize='none' onChangeText={(text) => setNome(text)}></TextInput>
+        <TextInput value= {nome} style={styles.input} placeholder='Cpf' autoCapitalize='none' onChangeText={(text) => setCpf(text)}></TextInput>
         <TextInput value={email} style = {styles.input} placeholder='Email' autoCapitalize='none'
         onChangeText={(text) => setEmail(text)}></TextInput>
          <TextInput value={senha} style = {styles.input} placeholder='Senha' autoCapitalize='none'

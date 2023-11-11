@@ -5,6 +5,9 @@ import Login from "../initial";
 import Home from "../home";
 import Cadastro from "../cadastro";
 import LoginPage from "../login";
+import Search from "../search";
+import Detalhes from "../detalhes";
+import Carrinho from "../carrinho";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +34,26 @@ export default function Routes() {
         component={LoginPage}
         options={{ headerShown: false }}
       />
+         <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{
+          title: "Resultados"
+        }}
+      />
+        <Stack.Screen
+        name="Detalhes"
+        component={Detalhes}
+        options={{
+          title: "Detalhes"
+        }}
+      /><Stack.Screen
+      name="Carrinho"
+      component={Carrinho}
+      options={{
+        title: "Carrinho"
+      }}
+    />
       
     </Stack.Navigator>
     
