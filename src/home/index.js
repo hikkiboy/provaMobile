@@ -1,13 +1,14 @@
 import React, { Component, useEffect, useState } from 'react';
-import { View, Text, TextInput, StyleSheet,FlatList, Button, Image, Touchable, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TextInput, StyleSheet,FlatList, Button, Image, Touchable, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import api from '../services/api';
 import {useNavigation} from '@react-navigation/native'
+import { LinearGradient } from 'expo-linear-gradient';
 import { EvilIcons } from '@expo/vector-icons';
 import Lista from '../components/lista';
-import { Feather } from '@expo/vector-icons';
-import ListaDestaques from '../components/destaques';
+import Carousel from 'react-native-snap-carousel';
+
 
 export default function  Home() {
   const navigation = useNavigation();
@@ -26,6 +27,8 @@ export default function  Home() {
     setInput("")
   }
 
+  const sliderWidth = Dimensions.get('window').width
+  const itemWidth = sliderWidth * 0.88
 
   useEffect(() => {
     async function fetch(){
@@ -42,6 +45,19 @@ export default function  Home() {
     fetch()
   }, [])
 
+  function carouselCardItem({item}){
+    return(
+      <View style={styles.cardCarousel}>
+         <Text style={styles.text}>{item.title}</Text>
+        <Image source={{uri: item.foto}} style={styles.fotoDestaque}/>
+        <LinearGradient
+            style ={styles.gradient}
+            colors ={[ 'transparent','rgba(0,0,0, 0.7)', 'rgba(0,0,0, 0.95)']}
+            />
+      </View>
+    )
+  }
+
     return (
       <SafeAreaView style={{flex: 1}}>
         <ScrollView>
@@ -57,18 +73,16 @@ export default function  Home() {
         </View>
         <Text style={styles.titulo}>DESTAQUES DA SEMANA</Text>
         <View style={{flex: 1}}>
-        <FlatList
-        data = {destaques}
-        horizontal = {true}
-        pagingEnabled = {true}
-        showsHorizontalScrollIndicator = {false}
-        keyExtractor={(item) => String(item.id)}
-        showsVerticalScrollIndicator= {false}
-        renderItem={({item}) => <ListaDestaques data={item} />
-        }
+        <Carousel
+        data={destaques}
+        renderItem={carouselCardItem}
+        sliderWidth={sliderWidth}
+        itemWidth={itemWidth}
+        useScrollView = {true}
+
         />
         </View>
-
+        <Text style={styles.titulo}>PRODUTOS PRA COMPRAR COMPRA AGORA</Text>
         <View style={{flex: 1}}>
         <FlatList
         data = {produtos}
@@ -106,7 +120,8 @@ const styles = StyleSheet.create({
   },
   containerSearch:{
     flexDirection: 'row',
-    marginTop: 20
+    marginTop: 20,
+    marginLeft: -14
   },
   foto:{
     width: 150,
@@ -126,5 +141,38 @@ const styles = StyleSheet.create({
   input:{
     width: '90%'
   },
+  fotoDestaque:{
+    width: 330,
+    height: 300,
+    borderRadius: 10,
+    marginLeft: 20,
+    alignSelf: 'center'
+  },
+  cardCarousel:{
+    width: '88%',
+  },
+  gradient:{
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: '55%',
+    borderRadius: 14,
+    zIndex: 1,
+    width: 330,
+    marginLeft: -15
+},
+text:{
+  position: 'absolute',
+  zIndex: 999,
+  color: 'white',
+  top: 200,
+  left: 10,
+  textAlign: 'center',
+  fontWeight: 'bold',
+  fontSize: 24,
+  alignSelf: 'center'
+
+},
 
 })

@@ -73,6 +73,24 @@
       "preco": "WTF GRATIS",
       "quantidade": 999,
       "descricao": "sim estou dando de gratis toma essa 😎"
+    },
+    {
+      "id": 2,
+      "title": "slc que saudade dela",
+      "author": "Monster",
+      "foto": "https://i.pinimg.com/736x/f5/29/a3/f529a31a7ab51e591848d3bdc9017c1c.jpg",
+      "preco": "WTF GRATIS",
+      "quantidade": 999,
+      "descricao": "sim estou dando de gratis toma essa 😎"
+    },
+    {
+      "id": 3,
+      "title": "use o cupom : nao tem cupom.",
+      "author": "Monster",
+      "foto": "https://cc-prod.scene7.com/is/image/CCProdAuthor/What-is-Stock-Photography_P1_mobile?$pjpeg$&jpegSize=200&wid=720",
+      "preco": "WTF GRATIS",
+      "quantidade": 999,
+      "descricao": "sim estou dando de gratis toma essa 😎"
     }
   ]
 }
