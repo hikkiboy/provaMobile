@@ -54,6 +54,25 @@
       "quantidade": 999,
       "descricao": "bebida ruim estragada to vendendno porq n gostei kkk mt ruim"
     }
-
+  ],
+  "destaques": [
+    {
+      "id": 0,
+      "title": "PROMOÇÃO ESQUENTA BLACK FRIDAY",
+      "author": "Monster",
+      "foto": "https://img.freepik.com/fotos-gratis/homem-gritando-na-camisa-jeans-com-copo-de-cerveja_155003-1502.jpg?w=740&t=st=1699915307~exp=1699915907~hmac=9c0e50103603d98570c6479b0260850ddb908a3a13a5b15556e3e3f378933daa",
+      "preco": "WTF GRATIS",
+      "quantidade": 999,
+      "descricao": "sim estou dando de gratis toma essa 😎"
+    },
+    {
+      "id": 1,
+      "title": "GANHE ATÉ 99% DE DEZCONTO",
+      "author": "Monster",
+      "foto": "https://i.pinimg.com/474x/ea/ec/fa/eaecfa6c7861ba7953d814b9168a74b2.jpg",
+      "preco": "WTF GRATIS",
+      "quantidade": 999,
+      "descricao": "sim estou dando de gratis toma essa 😎"
+    }
   ]
 }

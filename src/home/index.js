@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import { View, Text, TextInput, StyleSheet,FlatList, Button, Image, Touchable, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet,FlatList, Button, Image, Touchable, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import api from '../services/api';
@@ -7,12 +7,15 @@ import {useNavigation} from '@react-navigation/native'
 import { EvilIcons } from '@expo/vector-icons';
 import Lista from '../components/lista';
 import { Feather } from '@expo/vector-icons';
+import ListaDestaques from '../components/destaques';
 
 export default function  Home() {
   const navigation = useNavigation();
 
   const [input,setInput] = useState('')
   const [produtos, setProdutos] = useState([])
+
+  const [destaques, setDestaques] = useState([])
 
   function handleSearch(){
     if(!input) return;
@@ -31,11 +34,17 @@ export default function  Home() {
       console.log(response.data)
       console.log(produtos)
     }
+    async function fetchDestaques(){
+      const response = await api.get("/destaques")
+      setDestaques(response.data)
+    }
+    fetchDestaques()
     fetch()
   }, [])
 
     return (
       <SafeAreaView style={{flex: 1}}>
+        <ScrollView>
         <View style={styles.containerSearch}>
           <View style={styles.barraPesquisa}>
         <TextInput placeholder='Pesquisar' style={styles.input} value={input} onChangeText={(text) => setInput(text) }>
@@ -46,7 +55,20 @@ export default function  Home() {
         </View>
         <Ionicons style={styles.iconFilter} name="filter" size={40} color="black" />
         </View>
-      
+        <Text style={styles.titulo}>DESTAQUES DA SEMANA</Text>
+        <View style={{flex: 1}}>
+        <FlatList
+        data = {destaques}
+        horizontal = {true}
+        pagingEnabled = {true}
+        showsHorizontalScrollIndicator = {false}
+        keyExtractor={(item) => String(item.id)}
+        showsVerticalScrollIndicator= {false}
+        renderItem={({item}) => <ListaDestaques data={item} />
+        }
+        />
+        </View>
+
         <View style={{flex: 1}}>
         <FlatList
         data = {produtos}
@@ -57,6 +79,7 @@ export default function  Home() {
         }
         />
         </View>
+        </ScrollView>
       </SafeAreaView>
     );
   }
@@ -93,7 +116,8 @@ const styles = StyleSheet.create({
   },
   titulo:{
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 20
   },
   lupa:{
     alignSelf:'flex-end',

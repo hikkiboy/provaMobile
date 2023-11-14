@@ -1,4 +1,4 @@
-import { View, Text, Button, Image, StyleSheet, TouchableOpacity}from 'react-native'
+import { View, Text, Button, Image, StyleSheet, TouchableOpacity,ScrollView}from 'react-native'
 import React from 'react'
 import { clear, saveCarrinho } from '../utils/storage';
 import { useRoute } from '@react-navigation/native';
@@ -9,7 +9,8 @@ export default function Detalhes() {
     const navigation = useNavigation();
     const route = useRoute()
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
         <Image style={{height: 300, width:300}}  source={{uri: route.params?.foto}}/>
         <Text style={styles.nome}>{route.params?.name}</Text>
         <Text style={styles.desc}>{route.params?.desc}</Text>
@@ -18,8 +19,8 @@ export default function Detalhes() {
         <Text>anunciado por: {route.params?.author}</Text>
         <Button onPress={() => saveCarrinho("@appliquidaste",route.params?.data)} title='Colocar no carrinho'></Button>
         <Button style={styles.botao} onPress={() => navigation.navigate("Carrinho")} title='ir ao carrinho'></Button>
-
-    </View>
+        </View>
+    </ScrollView>
   )
 }
 
