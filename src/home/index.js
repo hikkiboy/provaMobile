@@ -7,10 +7,12 @@ import {useNavigation} from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { EvilIcons } from '@expo/vector-icons';
 import Lista from '../components/lista';
+import { AntDesign } from '@expo/vector-icons'; 
 import Carousel from 'react-native-snap-carousel';
 
 
 export default function  Home() {
+  
   const navigation = useNavigation();
 
   const [input,setInput] = useState('')
@@ -60,6 +62,11 @@ export default function  Home() {
 
     return (
       <SafeAreaView style={{flex: 1}}>
+        <View> 
+        <TouchableOpacity style={{zIndex:1}} onPress={() => navigation.navigate('Inserir')}>
+        <AntDesign style={styles.iconPlus} name="pluscircle" size={66} color="#2d79e3"  />
+        </TouchableOpacity>
+        </View>
         <ScrollView>
         <View style={styles.containerSearch}>
           <View style={styles.barraPesquisa}>
@@ -79,7 +86,6 @@ export default function  Home() {
         sliderWidth={sliderWidth}
         itemWidth={itemWidth}
         useScrollView = {true}
-
         />
         </View>
         <Text style={styles.titulo}>PRODUTOS PRA COMPRAR COMPRA AGORA</Text>
@@ -89,6 +95,7 @@ export default function  Home() {
         numColumns={2}
         keyExtractor={(item) => String(item.id)}
         showsVerticalScrollIndicator= {false}
+        // extraData={}
         renderItem={({item}) => <Lista data={item} />
         }
         />
@@ -159,7 +166,7 @@ const styles = StyleSheet.create({
     height: '55%',
     borderRadius: 14,
     zIndex: 1,
-    width: 330,
+    width: 350,
     marginLeft: -15
 },
 text:{
@@ -174,5 +181,12 @@ text:{
   alignSelf: 'center'
 
 },
+iconPlus:{
+  position: 'absolute',
+  zIndex: 1,
+  top: 600,
+  left: 300
+
+}
 
 })

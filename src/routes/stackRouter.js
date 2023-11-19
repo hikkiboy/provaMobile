@@ -8,6 +8,7 @@ import LoginPage from "../login";
 import Search from "../search";
 import Detalhes from "../detalhes";
 import Carrinho from "../carrinho";
+import Insert from "../insert";
 
 const Stack = createNativeStackNavigator();
 
@@ -52,6 +53,13 @@ export default function Routes() {
       component={Carrinho}
       options={{
         title: "Carrinho"
+      }}
+    />
+    <Stack.Screen
+      name="Inserir"
+      component={Insert}
+      options={{
+        title: "Cadastre um novo produto"
       }}
     />
       
