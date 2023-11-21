@@ -58,6 +58,9 @@ Caso você não esteja vendo nenhum produto, verifique o arquivo "api.js" e cert
 # db.json
 Arquivo que contem todas as informações dos produtos registrados no app.
 
+# Bug
+O react native vai dar um warning quando carregar a pág inicial dizendo que não recomenda renderizar duas flatlists com a mesma direção, eu não sei porque ele ta fazendo isso porque as flatlists que existem no app não tem a mesma direção.
+
 
 
 
