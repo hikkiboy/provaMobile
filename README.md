@@ -13,11 +13,14 @@ Para iniciar o banco de dados, que contem as informações de todos os produtos,
 ```json-server --watch --host SEU-IP db.json```
 
 # Funcionalidades
->Adicionar produtos
->Carrinho de produtos
->"Comprar produtos" (remove tudo do carrinho basicamente)
->Pesquisar produtos
->Fazer login
->Fazer cadastro
->Navegar entre os produtos
->Descrição e detalhes de cada produto
+
+```
+Adicionar produtos
+Carrinho de produtos
+"Comprar produtos" (remove tudo do carrinho basicamente)
+Pesquisar produtos
+Fazer login
+Fazer cadastro
+Navegar entre os produtos
+Descrição e detalhes de cada produto
+```
