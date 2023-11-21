@@ -2,6 +2,19 @@
 
 Um repo pra armazenar minha prova de desenvolvimento mobile.
 
+# Funcionalidades
+
+```
+Adicionar produtos
+Carrinho de produtos
+"Comprar produtos" (remove tudo do carrinho basicamente)
+Pesquisar produtos
+Fazer login
+Fazer cadastro
+Navegar entre os produtos
+Descrição e detalhes de cada produto
+```
+
 # Login e cadastro
 
 O login e o cadastro funcionam usando o Firebase para autenticação do usuario.
@@ -44,15 +57,4 @@ Arquivo que contem todas as informações dos produtos registrados no app.
 
 
 
-# Funcionalidades
 
-```
-Adicionar produtos
-Carrinho de produtos
-"Comprar produtos" (remove tudo do carrinho basicamente)
-Pesquisar produtos
-Fazer login
-Fazer cadastro
-Navegar entre os produtos
-Descrição e detalhes de cada produto
-```
