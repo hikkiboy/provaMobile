@@ -37,6 +37,10 @@ quando você ver essa mensagem
 ```
 
 Significa que o servidor iniciou sem problemas;
+Caso você não esteja vendo nenhum produto, verifique o arquivo "api.js" e certifique que o Ip dentro da api corresponde ao seu Ip.
+
+# db.json
+Arquivo que contem todas as informações dos produtos registrados no app.
 
 
 
