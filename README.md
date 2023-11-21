@@ -2,6 +2,9 @@
 
 Um repo pra armazenar minha prova de desenvolvimento mobile.
 
+# ***IMPORTANTE***
+***USE O COMANDO NPM I ANTES DE TENTAR USAR O APP, CASO NÃO FAÇA ISSO ELE NÃO IRA RODAR***
+
 # Funcionalidades
 
 ```
