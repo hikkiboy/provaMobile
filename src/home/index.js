@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import { View, Text, TextInput, StyleSheet,FlatList, Button, Image, Touchable, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
+import { View, Text, TextInput, StyleSheet,FlatList, Button, Image, Touchable, TouchableOpacity, ScrollView, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import api from '../services/api';
@@ -63,9 +63,9 @@ export default function  Home() {
     return (
       <SafeAreaView style={{flex: 1}}>
         <View> 
-        <TouchableOpacity style={{zIndex:1}} onPress={() => navigation.navigate('Inserir')}>
-        <AntDesign style={styles.iconPlus} name="pluscircle" size={66} color="#2d79e3"  />
-        </TouchableOpacity>
+        <TouchableWithoutFeedback style={{zIndex:1}} onPress={() => navigation.navigate('Inserir')}>
+        <AntDesign style={styles.iconPlus} name="pluscircle" size={66} color="#2d79e3" />
+        </TouchableWithoutFeedback>
         </View>
         <ScrollView>
         <View style={styles.containerSearch}>
@@ -76,7 +76,9 @@ export default function  Home() {
         <EvilIcons name="search" size={33} color="black" />
         </TouchableOpacity>
         </View>
-        <Ionicons style={styles.iconFilter} name="filter" size={40} color="black" />
+        <TouchableOpacity style={styles.iconFilter} onPress={() => alert('filtro')}>
+        <Ionicons name="filter" size={40} color="black" />
+        </TouchableOpacity>
         </View>
         <Text style={styles.titulo}>DESTAQUES DA SEMANA</Text>
         <View style={{flex: 1}}>
@@ -88,7 +90,7 @@ export default function  Home() {
         useScrollView = {true}
         />
         </View>
-        <Text style={styles.titulo}>PRODUTOS PRA COMPRAR COMPRA AGORA</Text>
+        <Text style={styles.titulo}>PRODUTOS PRA COMPRAR COMPRE AGORA</Text>
         <View style={{flex: 1}}>
         <FlatList
         data = {produtos}
@@ -184,8 +186,8 @@ text:{
 iconPlus:{
   position: 'absolute',
   zIndex: 1,
-  top: 600,
-  left: 300
+  top: 590,
+  left: 290
 
 }
 

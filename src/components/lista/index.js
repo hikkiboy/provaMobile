@@ -20,7 +20,9 @@ const styles = StyleSheet.create({
       width: 150,
       height: 300,
       margin: 12,
-      marginHorizontal: 15
+      marginHorizontal: 15,
+      borderWidth: 3,
+      borderColor: 'silver',
     },
     titulo:{
       fontWeight: 'bold',

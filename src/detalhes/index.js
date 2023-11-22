@@ -17,8 +17,14 @@ export default function Detalhes() {
         <Text>preço: {route.params?.preco}</Text>
         <Text>quantidade restante: {route.params?.qntd}</Text>
         <Text>anunciado por: {route.params?.author}</Text>
-        <Button onPress={() => saveCarrinho("@appliquidaste",route.params?.data)} title='Colocar no carrinho'></Button>
-        <Button style={styles.botao} onPress={() => navigation.navigate("Carrinho")} title='ir ao carrinho'></Button>
+        <TouchableOpacity style = {styles.buttonRegistro} title = 'Registrar' onPress={() => saveCarrinho("@appliquidaste",route.params?.data)}>
+          <Text style={styles.text}>Adicionar no carrinho</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style = {styles.buttonRegistro} title = 'Registrar' onPress={() => navigation.navigate("Carrinho")}>
+          <Text style={styles.text}>Visitar o carrinho</Text>
+          </TouchableOpacity>
+        {/* <Button onPress={() => saveCarrinho("@appliquidaste",route.params?.data)} title='Colocar no carrinho'></Button> */}
+        {/* <Button style={styles.botao} onPress={() => navigation.navigate("Carrinho")} title='ir ao carrinho'></Button> */}
         </View>
     </ScrollView>
   )
@@ -57,5 +63,22 @@ const styles = StyleSheet.create({
       },
       botao:{
         marginTop: 10
-      }
+      },
+      buttonRegistro:{
+        backgroundColor: "#2d79e3",
+        alignSelf: "center",
+        fontSize: 20,
+        fontWeight: "bold",
+        marginTop: 10,
+        width: 250,
+        height: 50,
+        borderRadius: 10
+       },
+       text:{
+        fontWeight: 'bold',
+        fontSize: 18,
+        textAlign: 'center',
+        marginTop: 10,
+        color: '#FFFFFF',
+       },
 })

@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   logocontain:{
     height: '15%',
     width: '100%',
-    marginTop: 250
+    marginTop: 250,
   }
   
 });

@@ -5,7 +5,11 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { app_auth } from "./firebaseconfig";
 
+
 import Routes, { TabNavigatior } from "./src/routes/stackRouter";
+
+
+//json-server –watch -d 180 –host SEU-IP db.json
 
 const Stack = createNativeStackNavigator();
 
